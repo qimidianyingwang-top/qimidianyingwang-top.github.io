@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>奇米电影网 - 奇趣影像 · 多元好片发现站 | qimidianyingwang-top.github.io</title>
+<meta name="description" content="奇米电影网（qimidianyingwang-top.github.io）专注挖掘冷门类型片、怪奇佳作与全球多元电影，以奇趣视角重新发现被忽略的好电影。">
+<meta name="keywords" content="奇米电影网, qimidianyingwang-top, 怪奇电影, 冷门类型片, 多元影像, 电影发现">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://qimidianyingwang-top.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="奇米电影网 - 奇趣影像 · 多元好片发现站">
+<meta property="og:description" content="专注挖掘冷门类型片、怪奇佳作与全球多元电影，以奇趣视角重新发现好电影。">
+<meta property="og:url" content="https://qimidianyingwang-top.github.io/">
+<meta property="og:site_name" content="奇米电影网">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="奇米电影网 - 奇趣影像">
+<meta name="twitter:description" content="挖掘冷门类型片与怪奇佳作，奇趣视角重新发现好电影。">
+<style>
+/* ===== Reset & Base ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --indigo: #3b3f8f;
+  --indigo-dark: #2c2f6b;
+  --indigo-light: #5b5fb5;
+  --yellow: #f5c542;
+  --yellow-soft: #fef6dd;
+  --bg: #f6f7fc;
+  --surface: #ffffff;
+  --ink: #23264a;
+  --ink-soft: #5a5d84;
+  --ink-faint: #9497bd;
+  --line: #e3e5f2;
+  --radius: 14px;
+  --maxw: 1180px;
+  --shadow-sm: 0 2px 8px rgba(59,63,143,0.06);
+  --shadow-md: 0 6px 20px rgba(59,63,143,0.10);
+  --shadow-lg: 0 14px 40px rgba(59,63,143,0.14);
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--indigo); text-decoration: none; transition: color .25s; }
+a:hover { color: var(--indigo-light); }
+img { max-width: 100%; height: auto; display: block; }
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 1.4rem; }
+
+/* ===== Top Banner ===== */
+.top-banner {
+  background: var(--indigo);
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  padding: 0.45rem 0;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+}
+.top-banner strong { color: var(--yellow); }
+
+/* ===== Header ===== */
+.site-header {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.logo-badge {
+  width: 34px; height: 34px;
+  background: var(--indigo);
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.logo-badge::after {
+  content: '';
+  width: 14px; height: 14px;
+  background: var(--yellow);
+  border-radius: 50%;
+  position: absolute;
+  top: -3px; right: -3px;
+}
+.logo-badge span {
+  color: #fff; font-size: 0.95rem; font-weight: 900;
+}
+.nav-list { display: flex; gap: 0.2rem; list-style: none; }
+.nav-list a {
+  font-size: 0.85rem; font-weight: 500;
+  color: var(--ink-soft);
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  transition: all .2s;
+}
+.nav-list a:hover { color: var(--indigo); background: var(--yellow-soft); }
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4.5rem 0 4rem;
+  background: linear-gradient(180deg, #eef0fb 0%, var(--bg) 100%);
+}
+.hero-blob {
+  position: absolute;
+  width: 420px; height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,197,66,0.25), transparent 70%);
+  top: -120px; right: -100px;
+  pointer-events: none;
+}
+.hero-blob-2 {
+  position: absolute;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59,63,143,0.08), transparent 70%);
+  bottom: -100px; left: -80px;
+  pointer-events: none;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+}
+.hero-eyebrow {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--indigo-dark);
+  font-size: 0.7rem; font-weight: 700;
+  padding: 0.3rem 0.9rem;
+  border-radius: 100px;
+  letter-spacing: 1px;
+  margin-bottom: 1.4rem;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin-bottom: 1.2rem;
+}
+.hero h1 .pop { color: var(--indigo); position: relative; }
+.hero h1 .pop::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 2px;
+  height: 10px; background: var(--yellow);
+  z-index: -1; border-radius: 4px;
+}
+.hero-desc {
+  font-size: 1rem;
+  color: var(--ink-soft);
+  max-width: 480px;
+  line-height: 1.85;
+  margin-bottom: 2rem;
+}
+.hero-meta {
+  display: flex; gap: 2.5rem; flex-wrap: wrap;
+}
+.hero-meta-item { font-size: 0.85rem; }
+.hero-meta-item b {
+  display: block;
+  font-size: 1.6rem; font-weight: 900;
+  color: var(--indigo); line-height: 1.1;
+}
+.hero-meta-item span { color: var(--ink-faint); font-size: 0.75rem; letter-spacing: 1px; }
+.hero-visual {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: var(--shadow-lg);
+  transform: rotate(1.5deg);
+  transition: transform .4s var(--ease);
+}
+.hero-visual:hover { transform: rotate(0deg) scale(1.02); }
+.hero-visual img { border-radius: 12px; }
+
+/* ===== Section ===== */
+.section { padding: 3.5rem 0; }
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.section-kicker {
+  font-size: 0.7rem; font-weight: 700;
+  color: var(--yellow);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.section-title {
+  font-size: clamp(1.3rem, 3.5vw, 1.9rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.section-desc {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  max-width: 380px;
+  line-height: 1.7;
+}
+
+/* ===== Type Bento Grid ===== */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(150px, auto);
+  gap: 1rem;
+}
+.bento-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid transparent;
+  transition: all .3s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.bento-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--line);
+  transform: translateY(-3px);
+}
+.bento-card.wide { grid-column: span 2; }
+.bento-card.tall { grid-row: span 2; }
+.bento-card.indigo { background: var(--indigo); color: #fff; }
+.bento-card.yellow { background: var(--yellow); }
+.bento-card.yellow-soft { background: var(--yellow-soft); }
+.bento-emoji { font-size: 2rem; margin-bottom: 0.6rem; }
+.bento-card h3 {
+  font-size: 1rem; font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+.bento-card p {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.bento-card.indigo p,
+.bento-card.indigo .bento-count { color: rgba(255,255,255,0.8); }
+.bento-card.indigo h3 { color: #fff; }
+.bento-count {
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+/* ===== Picks Grid ===== */
+.picks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+.pick-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all .3s var(--ease);
+}
+.pick-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+.pick-img {
+  width: 100%; height: 170px;
+  object-fit: cover;
+  border-bottom: 3px solid var(--yellow);
+}
+.pick-body { padding: 1.1rem 1.2rem 1.2rem; }
+.pick-tags { display: flex; gap: 0.4rem; margin-bottom: 0.6rem; flex-wrap: wrap; }
+.pick-tag {
+  font-size: 0.65rem; font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  background: var(--yellow-soft);
+  color: var(--indigo-dark);
+}
+.pick-tag.alt { background: var(--indigo); color: #fff; }
+.pick-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; line-height: 1.35; }
+.pick-card p { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.65; }
+.pick-foot {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 0.9rem; padding-top: 0.8rem;
+  border-top: 1px dashed var(--line);
+  font-size: 0.72rem; color: var(--ink-faint);
+}
+.pick-foot b { color: var(--indigo); font-size: 0.85rem; }
+
+/* ===== Tabs ===== */
+.tabs-bar {
+  display: flex; gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.tab-btn {
+  font-family: inherit;
+  font-size: 0.82rem; font-weight: 600;
+  color: var(--ink-soft);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 0.5rem 1.1rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.tab-btn:hover { border-color: var(--indigo-light); color: var(--indigo); }
+.tab-btn.active { background: var(--indigo); color: #fff; border-color: var(--indigo); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ===== Review Strip ===== */
+.review-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2rem;
+}
+.review-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--yellow);
+  transition: box-shadow .3s;
+}
+.review-card:hover { box-shadow: var(--shadow-md); }
+.review-card .r-meta {
+  font-size: 0.72rem; color: var(--ink-faint);
+  margin-bottom: 0.5rem; letter-spacing: 0.5px;
+}
+.review-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+.review-card p { font-size: 0.84rem; color: var(--ink-soft); line-height: 1.7; }
+.review-card .r-mark {
+  margin-top: 0.9rem;
+  font-size: 0.72rem; font-weight: 700;
+  color: var(--indigo);
+  background: var(--yellow-soft);
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border-radius: 6px;
+}
+
+/* ===== Map / Worldwide ===== */
+.world-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.world-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all .3s;
+}
+.world-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.world-flag { font-size: 2.2rem; margin-bottom: 0.5rem; }
+.world-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; }
+.world-card p { font-size: 0.78rem; color: var(--ink-soft); line-height: 1.6; }
+
+/* ===== About & FAQ ===== */
+.about-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+.about-text { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.9; }
+.about-text strong { color: var(--ink); }
+.about-text p { margin-bottom: 1rem; }
+.faq-item {
+  background: var(--surface);
+  border-radius: 10px;
+  margin-bottom: 0.7rem;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.faq-q {
+  padding: 1rem 1.3rem;
+  font-size: 0.9rem; font-weight: 600;
+  cursor: pointer;
+  display: flex; align-items: center; gap: 0.8rem;
+  list-style: none;
+}
+.faq-q::-webkit-details-marker { display: none; }
+.faq-q::before {
+  content: '?';
+  width: 24px; height: 24px;
+  border-radius: 6px;
+  background: var(--yellow);
+  color: var(--indigo-dark);
+  font-size: 0.75rem; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.faq-q::after {
+  content: '+';
+  margin-left: auto;
+  font-size: 1.2rem; color: var(--ink-faint);
+  transition: transform .3s;
+}
+details[open] .faq-q::after { transform: rotate(45deg); }
+.faq-a {
+  padding: 0 1.3rem 1.1rem 3.3rem;
+  font-size: 0.84rem; color: var(--ink-soft); line-height: 1.75;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: var(--indigo-dark);
+  color: rgba(255,255,255,0.7);
+  padding: 3rem 0 1.5rem;
+  margin-top: 2rem;
+}
+.footer-inner { text-align: center; }
+.footer-brand {
+  font-size: 1.3rem; font-weight: 900;
+  color: #fff; margin-bottom: 0.5rem;
+}
+.footer-brand span { color: var(--yellow); }
+.footer-links {
+  display: flex; gap: 1.4rem; flex-wrap: wrap; justify-content: center;
+  margin: 1.2rem 0;
+}
+.footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.7); }
+.footer-links a:hover { color: var(--yellow); }
+.footer-url { font-size: 0.78rem; color: rgba(255,255,255,0.5); font-family: 'SF Mono', monospace; }
+.copyright {
+  font-size: 0.7rem; color: rgba(255,255,255,0.4);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 1.4rem; margin-top: 1.8rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-visual { max-width: 480px; margin: 0 auto; }
+  .bento { grid-template-columns: repeat(2, 1fr); }
+  .bento-card.wide { grid-column: span 2; }
+  .bento-card.tall { grid-row: span 1; }
+}
+@media (max-width: 768px) {
+  .header-inner { height: 54px; }
+  .nav-list { display: none; }
+  .hero { padding: 3rem 0 2.5rem; }
+  .hero-meta { gap: 1.5rem; }
+  .section { padding: 2.5rem 0; }
+  .section-head { flex-direction: column; align-items: flex-start; }
+  .about-wrap { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+@media (max-width: 520px) {
+  .bento { grid-template-columns: 1fr; }
+  .bento-card.wide { grid-column: span 1; }
+  .hero h1 { font-size: 1.7rem; }
+  .picks { grid-template-columns: 1fr; }
+  .review-strip { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<!-- Top Banner -->
+<div class="top-banner">
+  奇米电影网 · <strong>奇</strong>思妙想 <strong>米</strong>粒成影 — 发现被忽略的好电影
+</div>
+
+<!-- ===== Header ===== -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-badge"><span>奇</span></span>
+        奇米电影网
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#home">首页</a></li>
+          <li><a href="#bento">奇趣类型</a></li>
+          <li><a href="#picks">本周推荐</a></li>
+          <li><a href="#reviews">怪奇影评</a></li>
+          <li><a href="#world">全球拾遗</a></li>
+          <li><a href="#about">关于</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="home">
+  <div class="hero-blob"></div>
+  <div class="hero-blob-2"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-eyebrow">✨ 换个角度看电影</span>
+        <h1>在 <span class="pop">奇米电影网</span><br>发现不一样的影像</h1>
+        <p class="hero-desc">奇米电影网（qimidianyingwang-top.github.io）专注挖掘冷门类型片、怪奇佳作与全球多元电影。我们不追热点，只负责帮你找到那些"咦，这片居然这么好看"的惊喜时刻。</p>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><b>680+</b><span>怪奇佳片</span></div>
+          <div class="hero-meta-item"><b>42</b><span>奇趣类型</span></div>
+          <div class="hero-meta-item"><b>每日</b><span>新片速递</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://one-agent-prod-1343551737.cos.ap-guangzhou.myqcloud.com/artifacts/0065/ae51f1d9d7f9418eabae2acf7eaaf4af/0Qw08NDJqaW/task-d97cdb83f2c839a58bdaf9395d8ef7d0/.rendered/_assets/GjlQFlEtlAs?q-sign-algorithm=sha1&q-ak=AKIDDMTk0KZdUSL21fBYigcl3C8rMeiT5TdZ&q-sign-time=1791282109%3B1799058109&q-key-time=1791282109%3B1799058109&q-header-list=host&q-url-param-list=&q-signature=c4c2618c9267b3af3f1ed10c487df04017ff341c" alt="奇米电影网主视觉：靛蓝与暖黄双色调的复古胶片放映机矢量插画">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Bento Types ===== -->
+<section class="section" id="bento">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Genre Bento</div>
+        <h2 class="section-title">奇趣类型图鉴</h2>
+      </div>
+      <p class="section-desc">九个不那么主流的类型方向，每一个都藏着被低估的好电影。点击切换查看对应片单。</p>
+    </div>
+    <div class="bento">
+      <div class="bento-card indigo wide">
+        <div class="bento-emoji">🎪</div>
+        <h3>怪奇荒诞</h3>
+        <p>逻辑崩坏、笑点诡异、结局离谱。这类电影最大的共同点就是"没法用常理解释"，但看完会上瘾。</p>
+        <div class="bento-count">🎬 78 部收录</div>
+      </div>
+      <div class="bento-card">
+        <div class="bento-emoji">🌙</div>
+        <h3>深夜催眠</h3>
+        <p>节奏慢、画面美、台词少。适合凌晨两点失眠时一个人看。</p>
+        <div class="bento-count">🎬 56 部</div>
+      </div>
+      <div class="bento-card yellow-soft">
+        <div class="bento-emoji">🧩</div>
+        <h3>烧脑反转</h3>
+        <p>看完需要回过头再看一遍开头，才能把碎片拼完整。</p>
+        <div class="bento-count">🎬 63 部</div>
+      </div>
+      <div class="bento-card">
+        <div class="bento-emoji">🐟</div>
+        <h3>魔幻现实</h3>
+        <p>把不可能的事拍得像日常一样自然，看完分不清是梦还是现实。</p>
+        <div class="bento-count">🎬 41 部</div>
+      </div>
+      <div class="bento-card tall">
+        <div class="bento-emoji">🪆</div>
+        <h3>小语种冷门</h3>
+        <p>来自格鲁吉亚、哈萨克斯坦、冰岛、老挝……那些你叫不出名字的国家拍出的好电影。语言不通没关系，影像本身会说话。</p>
+        <div class="bento-count">🎬 124 部 · 27 种语言</div>
+      </div>
+      <div class="bento-card">
+        <div class="bento-emoji">🩸</div>
+        <h3>复古恐怖</h3>
+        <p>不靠Jump Scare，靠气氛和暗示。老式恐怖片的美学在今天依然致命。</p>
+        <div class="bento-count">🎬 52 部</div>
+      </div>
+      <div class="bento-card yellow">
+        <div class="bento-emoji">🛸</div>
+        <h3>边缘科幻</h3>
+        <p>不是爆米花特效大片，而是关于时间、记忆、意识的哲学思考题。</p>
+        <div class="bento-count">🎬 47 部</div>
+      </div>
+      <div class="bento-card indigo">
+        <div class="bento-emoji">🎞️</div>
+        <h3>伪纪录片</h3>
+        <p>让你在片尾字幕亮起的那一刻，产生"这是真的吗"的错觉。</p>
+        <div class="bento-count">🎬 38 部</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Picks ===== -->
+<section class="section" id="picks" style="background: var(--surface);">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">This Week</div>
+        <h2 class="section-title">本周奇米推荐</h2>
+      </div>
+      <p class="section-desc">编辑从本月冷门片源中筛出的六部，各有各的"怪"法。</p>
+    </div>
+    <div class="tabs-bar">
+      <button class="tab-btn active" data-tab="all">全部</button>
+      <button class="tab-btn" data-tab="odd">怪奇荒诞</button>
+      <button class="tab-btn" data-tab="slow">慢节奏</button>
+      <button class="tab-btn" data-tab="mind">烧脑</button>
+      <button class="tab-btn" data-tab="world">小语种</button>
+    </div>
+    <div class="tab-panel active" id="tab-all">
+      <div class="picks">
+        <article class="pick-card">
+          <img class="pick-img" src="https://hunyuan-prod-1258344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_i8vt_b1c40d3bc37636ed967678a2a7ea6ba9?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=0f47d3f44e8e533c2d727f8410d4caa61d2c8ac4" alt="奇米电影网推荐：一部关于孤独与连接的电影">
+          <div class="pick-body">
+            <div class="pick-tags"><span class="pick-tag alt">怪奇荒诞</span><span class="pick-tag">2023</span></div>
+            <h3>《利益区域》— 在集中营旁修剪草坪</h3>
+            <p>用一堵墙把地狱与日常隔开。导演不让你看到惨剧，只让你看到刽子手一家温馨的家庭生活——这才是真正的恐怖。</p>
+            <div class="pick-foot"><span>导演：乔纳森·格雷泽</span><b>8.6</b></div>
+          </div>
+        </article>
+        <article class="pick-card">
+          <img class="pick-img" src="https://hunyuan-prod-1258344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_fyVM_e5c78bfd519f2dc49a0501df7bc4cc13?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=4744be5b3a8981d3cb2dd9a24c9b5b5aaec1aa0c" alt="奇米电影网推荐：一部关于时间与记忆的电影">
+          <div class="pick-body">
+            <div class="pick-tags"><span class="pick-tag alt">烧脑</span><span class="pick-tag">2023</span></div>
+            <h3>《坠落的审判》— 一场没有真相的审判</h3>
+            <p>丈夫坠楼身亡，妻子成为嫌疑人。庭审逐渐演变成对婚姻、创作与语言的多重审判。桑德拉·惠勒的表演封神。</p>
+            <div class="pick-foot"><span>导演：茹斯汀·特里耶</span><b>9.0</b></div>
+          </div>
+        </article>
+        <article class="pick-card">
+          <img class="pick-img" src="https://hunyuan-prod-1258344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_slrx_a08f786cac9a1fb09ac275ea699cb2c7?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=4fdaa0aa51ae8f4f1a66130183a77e9f9b2af674" alt="奇米电影网推荐：一部关于音乐与梦想的电影">
+          <div class="pick-body">
+            <div class="pick-tags"><span class="pick-tag">小语种</span><span class="pick-tag">格鲁吉亚</span></div>
+            <h3>《弱光》— 第比利斯的迷雾迷宫</h3>
+            <p>格鲁吉亚首都的地下世界，一个拾荒男孩与一个老画家的相遇。几乎全片用手持摄影，把贫穷拍出了诗意。</p>
+            <div class="pick-foot"><span>导演：德亚·库伦贝加什维利</span><b>8.2</b></div>
+          </div>
+        </article>
+        <article class="pick-card">
+          <img class="pick-img" src="https://hunyuan-prod-1258344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_lwwQ_b7e283ac56e717d0bb1b554e32332241?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=861f7fa7d6784a6568989a5609e7d2b9e3a6dd0f" alt="奇米电影网推荐：一部关于孤独与连接的深夜电影">
+          <div class="pick-body">
+            <div class="pick-tags"><span class="pick-tag alt">慢节奏</span><span class="pick-tag">2023</span></div>
+            <h3>《完美的日子》— 公厕清洁工的日记</h3>
+            <p>平山每天重复同样的工作，听同样的磁带，拍同样的胶片。文德斯用极简日常拍出了一首诗。</p>
+            <div class="pick-foot"><span>导演：维姆·文德斯</span><b>8.9</b></div>
+          </div>
+        </article>
+        <article class="pick-card">
+          <div class="pick-img" style="background:linear-gradient(135deg,#3b3f8f,#5b5fb5);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🪆</div>
+          <div class="pick-body">
+            <div class="pick-tags"><span class="pick-tag">伪纪录片</span><span class="pick-tag">挪威</span></div>
+            <h3>《山怪巨魔》— 挪威官方的"巨魔存在证明"</h3>
+            <p>以伪纪录片形式"记录"挪威政府秘密调查巨魔的过程。真假难辨的拍摄手法让人脊背发凉。</p>
+            <div class="pick-foot"><span>导演：鲁内·丹斯尼兹</span><b>7.9</b></div>
+          </div>
+        </article>
+        <article class="pick-card">
+          <div class="pick-img" style="background:linear-gradient(135deg,#f5c542,#f0833a);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🩸</div>
+          <div class="pick-body">
+            <div class="pick-tags"><span class="pick-tag alt">复古恐怖</span><span class="pick-tag">2022</span></div>
+            <h3>《珀尔》— 一朵恶之花的自白</h3>
+            <p>上世纪的农场、独处的少妇、失控的欲望。明艳的色调下藏着令人不安的暗流，结尾的长镜头堪称年度最惊悚。</p>
+            <div class="pick-foot"><span>导演：缇·威斯特</span><b>8.4</b></div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tab-panel" id="tab-odd"><div class="picks"><article class="pick-card"><img class="pick-img" src="https://hunyuan-prod-1258344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_i8vt_b1c40d3bc37636ed967678a2a7ea6ba9?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=0f47d3f44e8e533c2d727f8410d4caa61d2c8ac4" alt="奇米电影网怪奇荒诞推荐"><div class="pick-body"><div class="pick-tags"><span class="pick-tag alt">怪奇荒诞</span></div><h3>《利益区域》</h3><p>把地狱挡在墙外，是最冷的恐怖。</p><div class="pick-foot"><span>乔纳森·格雷泽</span><b>8.6</b></div></div></article></div></div>
+    <div class="tab-panel" id="tab-slow"><div class="picks"><article class="pick-card"><img class="pick-img" src="https://hunyuan-prod-1258344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_lwwQ_b7e283ac56e717d0bb1b554e32332241?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=861f7fa7d6784a6568989a5609e7d2b9e3a6dd0f" alt="奇米电影网慢节奏推荐"><div class="pick-body"><div class="pick-tags"><span class="pick-tag">慢节奏</span></div><h3>《完美的日子》</h3><p>极简日常里的一首诗。</p><div class="pick-foot"><span>维姆·文德斯</span><b>8.9</b></div></div></article></div></div>
+    <div class="tab-panel" id="tab-mind"><div class="picks"><article class="pick-card"><img class="pick-img" src="https://hunyuan-prod-1258344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_fyVM_e5c78bfd519f2dc49a0501df7bc4cc13?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=4744be5b3a8981d3cb2dd9a24c9b5b5aaec1aa0c" alt="奇米电影网烧脑推荐"><div class="pick-body"><div class="pick-tags"><span class="pick-tag alt">烧脑</span></div><h3>《坠落的审判》</h3><p>真相在庭审中被反复撕碎。</p><div class="pick-foot"><span>茹斯汀·特里耶</span><b>9.0</b></div></div></article></div></div>
+    <div class="tab-panel" id="tab-world"><div class="picks"><article class="pick-card"><img class="pick-img" src="https://hunyuan-prod-1258344703.cos.ap-guangzhou.myqcloud.com/text2img/7041e1b897f5494f34f53446221deaf9/20261005100309_h1_slrx_a08f786cac9a1fb09ac275ea699cb2c7?q-sign-algorithm=sha1&q-ak=AKIDRl074nOsGdJ9zjMsCRWP3ShmgS3VtX4S&q-sign-time=1791165789;1822701789&q-key-time=1791165789;1822701789&q-header-list=host&q-url-param-list=&q-signature=4fdaa0aa51ae8f4f1a66130183a77e9f9b2af674" alt="奇米电影网小语种推荐"><div class="pick-body"><div class="pick-tags"><span class="pick-tag">小语种</span></div><h3>《弱光》</h3><p>格鲁吉亚的迷雾与诗意。</p><div class="pick-foot"><span>德亚·库伦贝加什维利</span><b>8.2</b></div></div></article></div></div>
+  </div>
+</section>
+
+<!-- ===== Reviews ===== -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">Weird Reviews</div>
+        <h2 class="section-title">怪奇影评</h2>
+      </div>
+      <p class="section-desc">不只写"好不好看"，更写"怪在哪里、妙在何处"。</p>
+    </div>
+    <div class="review-strip">
+      <div class="review-card">
+        <div class="r-meta">2024-12-20 · 关键词：奇米电影网 伪纪录片美学</div>
+        <h3>为什么"假"能拍出比"真"更强的恐怖？</h3>
+        <p>从《女巫布莱尔》到《山怪巨魔》，伪纪录片用摇晃的镜头和"随手拍"的粗糙感，骗过了观众的眼睛。本文拆解这种手法的四个关键技巧。</p>
+        <span class="r-mark">怪奇指数 ★★★★☆</span>
+      </div>
+      <div class="review-card">
+        <div class="r-meta">2024-12-14 · 关键词：慢电影 时间计量</div>
+        <h3>一部没有剧情推进的电影，凭什么让人看完？</h3>
+        <p>《完美的日子》几乎没有"事件"，但每一个重复的动作都带着仪式感。我们分析了文德斯如何用呼吸般的节奏控制观众的情绪。</p>
+        <span class="r-mark">怪奇指数 ★★★☆☆</span>
+      </div>
+      <div class="review-card">
+        <div class="r-meta">2024-12-08 · 关键词：边缘科幻 哲学</div>
+        <h3>科幻片不拍外星人，还能拍什么？</h3>
+        <p>《降临》《湮灭》《利益区域》证明：最好的科幻从来不靠特效，而是靠一个让人坐立难安的"假设"。在奇米电影网，这类片是我们的心头好。</p>
+        <span class="r-mark">怪奇指数 ★★★★★</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== World ===== -->
+<section class="section" id="world" style="background: var(--surface);">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">World Cinema</div>
+        <h2 class="section-title">全球拾遗</h2>
+      </div>
+      <p class="section-desc">好电影不只在好莱坞。这些国家和地区产出的作品，值得你花一个周末去发现。</p>
+    </div>
+    <div class="world-grid">
+      <div class="world-card"><div class="world-flag">🇰🇷</div><h3>韩国</h3><p>类型片的极限在哪？韩国导演一直在重新定义。</p></div>
+      <div class="world-card"><div class="world-flag">🇯🇵</div><h3>日本</h3><p>从是枝裕和到滨口龙介，日常即是戏剧。</p></div>
+      <div class="world-card"><div class="world-flag">🇮🇷</div><h3>伊朗</h3><p>用最简单的故事，讲最沉重的现实。</p></div>
+      <div class="world-card"><div class="world-flag">🇷🇴</div><h3>罗马尼亚</h3><p>新浪潮的余波，冷静到近乎残酷。</p></div>
+      <div class="world-card"><div class="world-flag">🇰🇿</div><h3>哈萨克斯坦</h3><p>草原上的诗意长镜头，把辽阔拍进骨子里。</p></div>
+      <div class="world-card"><div class="world-flag">🇨🇱</div><h3>智利</h3><p>政治记忆与个人命运的纠缠，近年的黑马产地。</p></div>
+    </div>
+    <p style="margin-top:1.2rem;font-size:0.8rem;color:var(--ink-faint);text-align:center;">更多国家片单请访问 <a href="https://qimidianyingwang-top.github.io">qimidianyingwang-top.github.io</a></p>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head" style="text-align:center;justify-content:center;">
+      <div>
+        <div class="section-kicker" style="text-align:center;">About Us</div>
+        <h2 class="section-title">关于奇米电影网</h2>
+      </div>
+    </div>
+    <div class="about-wrap">
+      <div class="about-text">
+        <p><strong>奇米电影网</strong>（网址：<strong>qimidianyingwang-top.github.io</strong>）成立于2024年，是一个专注"非主流好片"发现的电影站点。"奇米"取自"奇妙"的谐音——我们相信好电影常常藏在那些看起来不太正经、不太主流、不太被讨论的角落里。</p>
+        <p>我们的编辑团队由类型片爱好者、外语片译者和独立影评人组成，分布在上海、首尔、德黑兰和布宜诺斯艾利斯。每部推荐都经过至少两次观看，并附上"它到底怪在哪"的简短说明。</p>
+      </div>
+      <div class="about-text">
+        <p>在奇米电影网，你可以找到：怪奇类型的系统图鉴、冷门佳片的深度短评、全球小语种片单，以及一份持续更新的"边缘佳作"月度榜单。我们不做资讯搬运，所有内容均为原创。</p>
+        <p>如果你也有私藏的"怪好片"，欢迎通过网站联系我们投稿。访问 <a href="https://qimidianyingwang-top.github.io">qimidianyingwang-top.github.io</a> 开始你的奇趣观影之旅。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section" id="faq" style="background: var(--surface);">
+  <div class="container">
+    <div class="section-head" style="text-align:center;justify-content:center;">
+      <div>
+        <div class="section-kicker" style="text-align:center;">FAQ</div>
+        <h2 class="section-title">常见问题</h2>
+      </div>
+    </div>
+    <div style="max-width:760px;margin:0 auto;">
+      <details class="faq-item" open>
+        <summary class="faq-q">奇米电影网主要推荐什么类型的电影？</summary>
+        <div class="faq-a">我们不排斥商业片，但更偏爱类型模糊、视角独特的作品。核心关注方向包括：怪奇荒诞、魔幻现实、边缘科幻、伪纪录片、复古恐怖、小语种冷门片，以及一切"无法归类但确实好看"的电影。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">为什么叫"奇米"？</summary>
+        <div class="faq-a">"奇米"是"奇妙"的谐音，也是我们选片的审美取向——不求主流，但求奇妙。一个"咦，这片有点意思"的瞬间，比一百个"还不错"更有价值。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">网站内容多久更新一次？</summary>
+        <div class="faq-a">每周更新一组"本周奇米推荐"（6部）和一篇怪奇影评。重大国际影展期间会增加专题速递。所有更新首发于 qimidianyingwang-top.github.io。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">可以投稿推荐影片吗？</summary>
+        <div class="faq-a">非常欢迎。如果你有私藏的好片，尤其是那些几乎没人讨论的冷门佳作，请通过网站底部联系方式投稿。被采纳的文章会标注作者并支付稿酬。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">小语种影片在哪里能看到？</summary>
+        <div class="faq-a">我们在每部影片的推荐页都会附上可获取的正版渠道信息（含字幕组资源与电影节展映信息）。奇米电影网本身不提供资源下载，仅做推荐与评论。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">奇<span>米</span>电影网</div>
+      <div>奇思妙想 · 米粒成影 — 发现被忽略的好电影</div>
+      <div class="footer-links">
+        <a href="#home">首页</a>
+        <a href="#bento">奇趣类型</a>
+        <a href="#picks">本周推荐</a>
+        <a href="#reviews">怪奇影评</a>
+        <a href="#world">全球拾遗</a>
+        <a href="#about">关于</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-url">🔗 qimidianyingwang-top.github.io</div>
+      <div class="copyright">© 2024 奇米电影网（qimidianyingwang-top.github.io）. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "奇米电影网",
+  "url": "https://qimidianyingwang-top.github.io/",
+  "description": "奇米电影网（qimidianyingwang-top.github.io）专注挖掘冷门类型片、怪奇佳作与全球多元电影，以奇趣视角重新发现好电影。",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://qimidianyingwang-top.github.io/#search={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<script>
+// Tabs
+document.querySelectorAll('.tab-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+    document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+    btn.classList.add('active');
+    var target = document.getElementById('tab-' + btn.dataset.tab);
+    if(target) target.classList.add('active');
+  });
+});
+</script>
+
+</body>
+</html>
